@@ -10,6 +10,6 @@ class Sauce extends Model
     public $fillable =['label','prix'];
 
     public function menu(){
-        return $this->belongsTo('App\Models\Menu');
+        return $this->belongsToMany('App\Models\Menu');
     }
 }

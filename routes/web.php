@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+// LOGIN ET DECONNEXION
+
+Route::get('/login', 'App\Http\Controllers\Auth\LoginController@login')->name('login');
+Route::post('/login', 'App\Http\Controllers\Auth\LoginController@authenticate')->name('authenticate');
+Route::get('/logout', 'App\Http\Controllers\Auth\LogoutController@logout')->name('logout');
+
+// FIN LOGIN ET DECONNEXION

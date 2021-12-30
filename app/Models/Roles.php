@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Facture extends Model
+class Roles extends Model
 {
-    public $fillable = ['solde'];
+    public $fillable = ['name', 'role', 'role_id'];
 
     public function user(){
-        return $this->belongsTo('App\Models\User');
+        return $this->hasMany('App\Models\User');
     }
 }

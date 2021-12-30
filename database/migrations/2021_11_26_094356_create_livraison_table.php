@@ -17,6 +17,10 @@ class CreateLivraisonTable extends Migration
             $table->increments('id');
             $table->string('statut');
             $table->date('date');
+            $table->unsignedInteger('livreur_id');
+            $table->foreign('livreur_id')->references('id')->on('users');
+            $table->unsignedInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
