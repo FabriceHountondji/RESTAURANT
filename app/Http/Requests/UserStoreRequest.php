@@ -13,7 +13,7 @@ class UserStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class UserStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'username' => 'required|string',
+            'email' => 'required|email|unique:users',
+            'photo' => 'required|image|mimes:jpg,jpeg,svg,png,gif|max:100000',
+            'password' => 'required|string',
+            'role_id' => 'integer',
         ];
     }
 }

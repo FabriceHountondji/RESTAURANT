@@ -13,7 +13,7 @@ class MenuUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class MenuUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string',
+            'description' => 'nullable',
+            'prix' => 'required|integer',
+            'category_id' => 'integer',
+            'acteur_id' => 'integer',
+            'photo' => 'nullable|image|mimes:jpg,jpeg,svg,png,gif|max:100000',
         ];
     }
 }

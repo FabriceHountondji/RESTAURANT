@@ -7,20 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    public $fillable =['label','prix'];
+    public $fillable =['name','description','prix','photo','category_id','acteur_id'];
 
-    public function plat(){
-        return $this->belongsTo('App\Models\Plat');
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 
-    public function accompagnement(){
-        return $this->belongsTo('App\Models\Accompagnement');
-    }
-    public function boisson(){
-        return $this->belongsTo('App\Models\Boisson');
-    }
-
-    public function sauce(){
-        return $this->belongsTo('App\Models\Sauce');
+    public function acteur(){
+        return $this->belongsTo(Acteur::class);
     }
 }

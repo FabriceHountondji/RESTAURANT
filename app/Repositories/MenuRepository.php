@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Traits\Repository;
-use App\\Models\\Menu; 
+use App\Models\Menu;
 
 class MenuRepository
 {
@@ -15,7 +15,7 @@ class MenuRepository
      * @var Model
      */
     protected $model;
-    
+
 
     /**
      * Constructor
@@ -47,6 +47,15 @@ class MenuRepository
      */
     public function makeStore($data): Menu{
         $menu = new Menu($data);
+
+        if(request()->hasFile('photo')) {
+            $imageUpload = request()->file('photo');
+            $imageName = time() .'.'. $imageUpload->getClientOriginalExtension();
+            $imagePath = public_path('storage/IMGS/imgs_menus/');
+            $imageUpload->move($imagePath, $imageName);
+            $menu->photo = 'storage/IMGS/imgs_menus/' .$imageName;
+        }
+
         $menu->save();
         return $menu;
     }
@@ -56,6 +65,16 @@ class MenuRepository
      */
     public function makeUpdate($id, $data): Menu{
         $menu = Menu::findOrFail($id);
+
+        if(request()->hasFile('photo')) {
+            $imageUpload = request()->file('photo');
+            $imageName = time() .'.'. $imageUpload->getClientOriginalExtension();
+            $imagePath = public_path('storage/IMGS/imgs_menus/');
+            $imageUpload->move($imagePath, $imageName);
+            $menu->photo = 'storage/IMGS/imgs_menus/' .$imageName;
+            $data['photo'] = $menu->photo;
+        }
+
         $menu->update($data);
         return $menu;
     }

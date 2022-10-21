@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>complete responsive food website design tutorial </title>
+    <title>E-restaurant</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -24,12 +24,11 @@
 
     <nav class="navbar">
         <a href="#home">Accueil</a>
-        <a href="#speciality">Spécialité</a>
+        <a href="#speciality">Menu</a>
         <a href="#popular">Populaire</a>
         <a href="#gallery">Galerie</a>
         <a href="#review">Avis</a>
-        <a href="#order">Commander</a>
-        <a href="#order">Connection</a>
+        <a href="{{ route('login') }}">Login</a>
     </nav>
 
 </header>
@@ -421,42 +420,20 @@
 
     <div class="share">
         <a href="#" class="btn">facebook</a>
-        <a href="#" class="btn">twitter</a>
         <a href="#" class="btn">instagram</a>
-        <a href="#" class="btn">pinterest</a>
-        <a href="#" class="btn">linkedin</a>
     </div>
 
-    <h1 class="credit"> created by <span> mr. web designer </span> | all rights reserved! </h1>
+    <h1 class="credit"> created by <span> E-restaurant </span> | all rights reserved! </h1>
 
 </section>
 
 <!-- scroll top button  -->
-<a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
+<a href="#home" class="fa fa-angle-up" id="scroll-top"></a>
 
 <!-- loader  -->
 <div class="loader-container">
     <img src="{{ asset('storage/index_fichiers/images/loader.gif') }}" alt="">
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- custom js file link  -->
 <script src="{{ asset('storage/index_fichiers/script.js') }}"></script>

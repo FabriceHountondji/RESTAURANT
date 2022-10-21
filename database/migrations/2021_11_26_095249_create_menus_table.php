@@ -15,20 +15,14 @@ class CreateMenusTable extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('label');
+            $table->string('name');
+            $table->string('description')->nullable();
             $table->integer('prix');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedInteger('plat_id');
-            $table->foreign('plat_id')->references('id')->on('plats');
-            $table->unsignedInteger('accompagnement_id');
-            $table->foreign('accompagnement_id')->references('id')->on('accompagnements');
-            $table->unsignedInteger('boisson_id');
-            $table->foreign('boisson_id')->references('id')->on('boissons');
-            $table->unsignedInteger('sauce_id');
-            $table->foreign('sauce_id')->references('id')->on('sauces');
-            $table->unsignedInteger('commande_id');
-            $table->foreign('commande_id')->references('id')->on('commandes');
+            $table->string('photo')->nullable();
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedInteger('acteur_id');
+            $table->foreign('acteur_id')->references('id')->on('acteurs');
             $table->timestamps();
         });
     }

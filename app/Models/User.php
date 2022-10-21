@@ -4,24 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model
+class User extends Authenticatable
 {
-    public $fillable = ['name','phone','birthday','sex','address','avatar','email','password','role_id'];
-
-    public function commandes(){
-        return $this->hasMany('App\Models\Commande');
-    }
-
-    public function factures(){
-        return $this->hasMany('App\Models\Facture');
-    }
-
-    public function menus(){
-        return $this->hasMany('App\Models\Menu');
-    }
+    public $fillable = ['username','email','photo','password','role_id'];
 
     public function role(){
-        return $this->belongsTo('App\Models\Commande');
+        return $this->belongsTo(Role::class);
+    }
+
+    public function acteur(){
+        return $this->belongsTo(Acteur::class);
     }
 }

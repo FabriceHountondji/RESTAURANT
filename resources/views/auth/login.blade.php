@@ -59,12 +59,12 @@
                 </div>
 
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
-                    <input class="input100" type="text" name="username" placeholder="username or email">
+                    <input class="input100" type="text" name="email" placeholder="username or email">
                     <span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="password">
+                    <input class="input100" type="password" name="password" placeholder="password">
                     <span class="focus-input100"></span>
 				</div>
 
@@ -81,22 +81,6 @@
                         </button>
                     </a>
 
-				</div>
-
-				<div class="text-center p-t-57 p-b-20">
-					<span class="txt1">
-						Se connecter avec
-					</span>
-				</div>
-
-				<div class="flex-c p-b-112">
-					<a href="#" class="login100-social-item">
-						<i class="fa fa-facebook-f"></i>
-					</a>
-
-					<a href="#" class="login100-social-item">
-						<img src="{{ asset('storage/login_fichiers/images/icons/icon-google.png') }} " alt="GOOGLE">
-					</a>
 				</div>
 
 			</form>

@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Traits\Repository;
-use App\\Models\\User; 
+use App\Models\User;
 
 class UserRepository
 {
@@ -15,7 +15,7 @@ class UserRepository
      * @var Model
      */
     protected $model;
-    
+
 
     /**
      * Constructor
