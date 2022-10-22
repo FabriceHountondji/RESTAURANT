@@ -28,7 +28,7 @@ class PanierController extends Controller
         });
 
         if($duplicata->isNotEmpty()){
-            return view('index',compact('menus'))->with('success','Le menu a déjà été ajouté au panier.');
+            return view('index2',compact('menus'))->with('success','Le menu a déjà été ajouté au panier.');
         }
 
         $menu = Menu::find($request->id);

@@ -21,7 +21,7 @@ class VitrineController extends Controller
     public function index(){
 
         $menus = $this->menuRepo->getlatest();
-        return view('index', compact('menus'));
+        return view('index2', compact('menus'));
 
     }
 

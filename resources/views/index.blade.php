@@ -29,6 +29,7 @@
         <a href="#gallery">Galerie</a>
         <a href="#review">Avis</a>
         <a href="{{ route('login') }}">Login</a>
+        <a href="{{ route('panier') }}">Mon panier</a>
     </nav>
 
 </header>
@@ -123,21 +124,22 @@
     <h1 class="heading"> most <span>popular</span> foods </h1>
 
     <div class="box-container">
-
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="{{ asset('storage/index_fichiers/images/p-1.jpg') }}" alt="">
-            <h3>tasty burger</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
+        @foreach($menus as $index => $menu)
+            <div class="box">
+                <span class="price"> $5 - $20 </span>
+                <img src="{{ asset($menu->photo) }}" alt="">
+                <h3>{{ $menu->name }}</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="{{ route('show', $menu ) }}" class="btn">Commander</a>
             </div>
-            <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
+        @endforeach
+        <!-- <div class="box">
             <span class="price"> $5 - $20 </span>
             <img src="{{ asset('storage/index_fichiers/images/p-2.jpg') }}" alt="">
             <h3>tasty cakes</h3>
@@ -201,7 +203,7 @@
                 <i class="far fa-star"></i>
             </div>
             <a href="#" class="btn">order now</a>
-        </div>
+        </div> -->
 
     </div>
 
